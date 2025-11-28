@@ -160,7 +160,7 @@ def main():
     question = st.text_area(
         "Your question about SBI loans:",
         placeholder="Example: What is the maximum tenure for SBI home loan?",
-        height=100,
+        height=80,
     )
 
     top_k = st.slider(
@@ -180,13 +180,15 @@ def main():
             answer = answer_with_qa(qa, question, top_chunks)
 
         # Show answer
+        
+        st.markdown(f"<p class='question-text'>Your Question: {question}</p>", unsafe_allow_html=True)
 
         st.markdown("🧠 Assistant Response")
         
         st.markdown(
             f"""
             <div class="answer-bubble">
-                {answer}
+                <strong>{answer}</strong>
                 
             </div>
             """,

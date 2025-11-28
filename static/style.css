@@ -33,6 +33,7 @@ body {
 /* Answer box */
 
 .answer-box {
+    
     background: #ffffff;
     padding: 16px;
     border-radius: 12px;
@@ -71,7 +72,14 @@ body {
     border: 1px solid #d2d9e5;        /* soft border */
     padding: 12px 16px;               /* space inside */
     margin-top: 8px;
+    margin-bottom: 12px;
     font-size: 14px;
     color: #1f2933;
+    font-weight: 600;
 }
 
+.question-text {
+    font-weight: 600;   /* bold question */
+    margin-bottom: 6px;
+    
+}
