@@ -142,7 +142,7 @@ def main():
     load_css()
     load_header_html()
     
-    st.subheader("Loan Assistant(SBI)")
+    st.subheader("Loan Assistant")
     st.write("Ask any question about SBI loan documents.The assistant will extract answers from the uploaded information..")
     
     # Load models and vector store
@@ -160,7 +160,7 @@ def main():
     question = st.text_area(
         "Your question about SBI loans:",
         placeholder="Example: What is the maximum tenure for SBI home loan?",
-        height=80,
+        height=100,
     )
 
     top_k = st.slider(
@@ -181,21 +181,29 @@ def main():
 
         # Show answer
         
-        st.markdown("<div class='answer-box'>", unsafe_allow_html=True)
-        st.markdown("<div class='answer-title'>🧠 Assistant Response</div>", unsafe_allow_html=True)
-        st.write(answer)
+        st.markdown(
+            f"""
+            <div class="answer-bubble">
+                <div class="answer-bubble-title">🧠 Assistant Response</div>
+                <p class="answer-bubble-text">{answer}</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+)
+        
 
-        # Show sources
+    # Show sources
         
         st.markdown("<div class='sources-title'>📄 Sources Used:</div>", unsafe_allow_html=True)
         sources = {c["source"] for c in top_chunks}
         if sources:
             pills_html = "".join(f"<span class='source-pill'>{src}</span>" for src in sources)
             st.markdown(pills_html, unsafe_allow_html=True)
+        
         else:
             st.write("No sources found.")
         
-        st.markdown("</div>", unsafe_allow_html=True)
+    
 
 
 if __name__ == "__main__":

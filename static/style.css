@@ -65,3 +65,23 @@ body {
     margin-right: 6px;
     margin-bottom: 4px;
 }
+.answer-bubble {
+    background-color: #f3f5fb;        /* light grey/blue like textarea */
+    border-radius: 10px;              /* rounded corners */
+    border: 1px solid #d2d9e5;        /* soft border */
+    padding: 12px 16px;               /* space inside */
+    margin-top: 8px;
+    font-size: 14px;
+    color: #1f2933;
+}
+
+.answer-bubble-title {
+    font-weight: 600;
+    color: #2563eb;                   /* blue title */
+    margin-bottom: 4px;
+}
+
+.answer-bubble-text {
+    margin: 0;
+}
+
