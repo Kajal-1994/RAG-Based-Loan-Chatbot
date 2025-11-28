@@ -1,0 +1,67 @@
+/* Page background and font */
+
+body {
+    
+    background-color: beige;
+    font-family: "Segoe UI",Arial,sans-serif;
+
+}
+
+/* Main content */
+
+.block-container{
+    max-width: 900px;
+    padding-top: 2rem;
+}
+
+
+/* Header styling */
+
+.header h1{
+    text-align: center;
+    color: #0a66c2;
+    font-size : 32px;
+    margin-bottom: 0.3rem;
+}
+
+.header p{
+    text-align: center;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+/* Answer box */
+
+.answer-box {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #d2d9e5;
+    margin-top: 18px;
+}
+
+
+.answer-title {
+    font-weight: 600;
+    color: #0a66c2;
+    margin-bottom: 6px;
+}
+
+
+/* Sources */
+
+.sources-title {
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.sources-pill{
+    display : inline-block;
+    background: #edf2ff;
+    color: #1a3a7a;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}
