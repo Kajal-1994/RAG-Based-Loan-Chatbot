@@ -152,7 +152,7 @@ def main():
         embed_model = load_embedding_model(store["model_name"])
         qa = load_qa_pipeline()
 
-    st.success("Models loaded.You can ask question about SBI Loans.")
+    st.success("You can ask question about SBI Loans.")
     
     
     # User input
