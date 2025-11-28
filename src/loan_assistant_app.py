@@ -4,8 +4,16 @@ import numpy as np
 import streamlit as st
 from sentence_transformers import SentenceTransformer
 from transformers import pipeline
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
 
 # ---------- Helper: load CSS & HTML from files ----------
+
+
+def project_root() -> str:
+    """Return absolute path to project root (folder above src/)."""
+    return os.path.dirname(os.path.dirname(__file__))
+
 
 def load_css(path: str = "static/style.css"):
     """Load CSS from an external file.."""
@@ -34,17 +42,22 @@ def load_header_html(path: str = "templates/header.html"):
 
 @st.cache_resource
 def load_vector_store(path: str = "loan_vector_store.pkl") -> dict:
+    
+    """Load the pre-built vector store from disk."""
+    
+    full_path = os.path.join(project_root(), path)
+    
     if not os.path.exists(path):
         st.error("loan_vector_store.pkl not found.\nPlease run buils_index.py file first.")
         st.stop()
-    with open(path,"rb") as f:
+    with open(full_path,"rb") as f:
         store = pickle.load(f)
         return store
 
 
 @st.cache_resource
 def load_embedding_model(model_name: str) -> SentenceTransformer:
-    return SentenceTransformer(model_name)
+    return SentenceTransformer(model_name,device = "cpu")
 
 
 @st.cache_resource
@@ -53,7 +66,11 @@ def load_qa_pipeline():
     Free local QA model from HuggingFace.
     Downloads once, then works offline.
      """
-     return pipeline("question-answering",model = "deepset/roberta-base-squad2")
+     return pipeline(
+        task ="question-answering",
+        model = "deepset/roberta-base-squad2",
+        device = -1,
+    )
 
 
 # ========= 3. RAG Helper Functions =========
@@ -122,10 +139,10 @@ def main():
 
     # Load external CSS and HTML header
     
-    load_css("static/style.css")
-    load_header_html("templates/header.html")
+    load_css()
+    load_header_html()
     
-    st.title("Loan Assistant(SBI)")
+    st.subheader("Loan Assistant(SBI)")
     st.write("Ask any question about SBI loan documents.The assistant will extract answers from the uploaded information..")
     
     # Load models and vector store
@@ -146,7 +163,11 @@ def main():
         height=80,
     )
 
-    top_k = st.slider("Number of chunks to retrieve (Top-K):", min_value=1, max_value=10, value=3)
+    top_k = st.slider(
+        "Number of chunks to retrieve (Top-K):", 
+        min_value=1, 
+        max_value=10, 
+        value=3)
 
     if st.button("Ask the Assistant"):
         if not question.strip():
@@ -173,6 +194,7 @@ def main():
             st.markdown(pills_html, unsafe_allow_html=True)
         else:
             st.write("No sources found.")
+        
         st.markdown("</div>", unsafe_allow_html=True)
 
 
