@@ -7,7 +7,7 @@ from transformers import pipeline
 
 # ---------- Helper: load CSS & HTML from files ----------
 
-def load_css(path: str = "style.css"):
+def load_css(path: str = "static/style.css"):
     """Load CSS from an external file.."""
     if os.path.exists(path):
         with open(path,'r', encoding= "utf-8")as f:
@@ -18,7 +18,7 @@ def load_css(path: str = "style.css"):
 
 
 
-def load_header_html(path: str = "index.html"):
+def load_header_html(path: str = "templates/header.html"):
     """Load header HTML from an external file."""
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
@@ -122,8 +122,8 @@ def main():
 
     # Load external CSS and HTML header
     
-    load_css("style.css")
-    load_header_html("index.html")
+    load_css("static/style.css")
+    load_header_html("templates/header.html")
     
     st.title("Loan Assistant(SBI)")
     st.write("Ask any question about SBI loan documents.The assistant will extract answers from the uploaded information..")
