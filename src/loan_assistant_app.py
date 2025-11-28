@@ -180,12 +180,14 @@ def main():
             answer = answer_with_qa(qa, question, top_chunks)
 
         # Show answer
+
+        st.markdown("🧠 Assistant Response")
         
         st.markdown(
             f"""
             <div class="answer-bubble">
-                <div class="answer-bubble-title">🧠 Assistant Response</div>
-                <p class="answer-bubble-text">{answer}</p>
+                {answer}
+                
             </div>
             """,
             unsafe_allow_html=True,

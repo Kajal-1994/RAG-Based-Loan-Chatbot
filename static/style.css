@@ -75,13 +75,3 @@ body {
     color: #1f2933;
 }
 
-.answer-bubble-title {
-    font-weight: 600;
-    color: #2563eb;                   /* blue title */
-    margin-bottom: 4px;
-}
-
-.answer-bubble-text {
-    margin: 0;
-}
-
