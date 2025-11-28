@@ -1,0 +1,101 @@
+#######################################
+# PYTHON
+#######################################
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+*.dll
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+#######################################
+# ENVIRONMENTS
+#######################################
+venv/
+env/
+.venv/
+ENV/
+
+#######################################
+# RAG / NLP / AI PROJECT FILES
+#######################################
+
+# Vector store files (auto-generated)
+*.pkl
+loan_vector_store.pkl
+
+# Huggingface transformers cache
+~/.cache/huggingface/
+huggingface/
+transformers_cache/
+
+#######################################
+# STREAMLIT
+#######################################
+.streamlit/
+.streamlit/cache/
+
+#######################################
+# LOGS & TEMP FILES
+#######################################
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+#######################################
+# OS FILES (WINDOWS + MAC)
+#######################################
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+
+#######################################
+# IDE / EDITOR SETTINGS
+#######################################
+
+# VS Code
+.vscode/
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+#######################################
+# OTHER
+#######################################
+# Database / Storage files
+*.db
+*.sqlite3
