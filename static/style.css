@@ -85,6 +85,7 @@ body {
     
 }
 .textarea{
+    
     border-radius: 10px;
     padding-top: 14px;
     padding-bottom: 14px;
@@ -92,15 +93,21 @@ body {
     padding-right: 16px;
     background-color: #f3f5fb;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.3;
 }
+
 textarea::placeholder {
 
     color: #6b726b;
     padding-top: 14px;
     padding-bottom: 14px;
-    padding-left: 16px;
-    padding-right: 16px;
+    
     opacity: 1;
     line-height: 1.6;
+}
+input[type="text"]{
+    border-radius: 10px;
+    padding: 10px 14px;
+    background-color: #f3f5fb;
+    font-size: 14px;
 }
