@@ -81,5 +81,6 @@ body {
 .question-text {
     font-weight: 600;   /* bold question */
     margin-bottom: 6px;
+    margin-top: 6px;
     
 }
