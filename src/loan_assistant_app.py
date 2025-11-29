@@ -160,6 +160,7 @@ def main():
     question = st.text_area(
         "Your question about SBI loans:",
         placeholder="Example: What is the maximum tenure for SBI home loan?",
+        height = 80,
     )
     top_k = st.slider(
         "Number of chunks to retrieve (Top-K):", 
