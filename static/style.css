@@ -97,6 +97,10 @@ body {
 textarea::placeholder {
 
     color: #6b726b;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
     opacity: 1;
     line-height: 1.6;
 }
