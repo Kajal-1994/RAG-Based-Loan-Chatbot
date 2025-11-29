@@ -86,8 +86,17 @@ body {
 }
 .textarea{
     border-radius: 10px;
-    padding: 14px 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
     background-color: #f3f5fb;
-    font: 14px;
+    font-size: 14px;
     line-height: 1.5;
+}
+textarea::placeholder {
+
+    color: #6b726b;
+    opacity: 1;
+    line-height: 1.6;
 }
